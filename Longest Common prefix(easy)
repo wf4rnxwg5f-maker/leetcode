@@ -1,0 +1,22 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if len(strs)==1:
+            return strs[0]
+        glava = strs[0]
+        c = 0
+        k = 0
+        t = 0
+        for i in range(len(glava)):
+            for s in strs:
+                if c < len(s):
+                    if glava[c] == s[c]:
+                        t+=1
+                    else:
+                        return glava[:c]
+                else: return glava[:c]
+            c+=1
+        if len(glava[0:c])==0:
+            return ""
+        else:
+            return glava[0:c]
+                        
