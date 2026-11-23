@@ -1,0 +1,8 @@
+class Solution:
+    import itertools
+    def climbStairs(self, n: int) -> int:
+        fi =1
+        fa = 1
+        for i in range(0,n-1):
+            fi,fa = fa, fi+fa
+        return fa
